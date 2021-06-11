@@ -14,3 +14,10 @@ var timer = setInterval(function(){
 setTimeout(function(){
   console.log("printing after 2 seconds");
 },2000);
+
+//other important global objects
+/*
+require,
+module,
+etc
+*/
