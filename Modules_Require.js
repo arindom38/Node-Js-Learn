@@ -5,3 +5,5 @@ let UserModule = require("./UserModule");
 UserModule.users(userls);
 UserModule.usersCnt(userls);
 UserModule.usersFirstName(userls);
+console.log(UserModule.userSalary(userls[2],18.65));
+console.log(UserModule.company);
