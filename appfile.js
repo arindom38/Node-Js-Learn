@@ -16,6 +16,13 @@ fs.readFile('readMe.txt','utf8',(err,data) => {
 });
 console.log('I am not blocked and I came first!');
 
+/*
+--for deleting files--
+fs.unlink('writeMe.txt',(err) =>{
+  if(err) throw err;
+  console.log('File is deleted! ');
+});
+*/
 /*output
 I am not blocked and I came first!
 File written complete!
