@@ -14,4 +14,10 @@ myReadSteam.on('data',(chunk)=>{
 */
 //using pipe we don't need to write manual event
 //pipe is one way , from read stream to write Stream
-myReadSteam.pipe(myWriteStream);
+//myReadSteam.pipe(myWriteStream);
+
+
+module.exports = {
+  myReadSteam:myReadSteam,
+  myWriteStream: myWriteStream
+};
