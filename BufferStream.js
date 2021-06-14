@@ -8,22 +8,22 @@ Streams =>
 */
 var http = require('http');
 var fs = require('fs');
-.
 
 
 
 //custom Readstream using fs module
-var myReadSteam = fs.createReadStream(__dirname+'/readMe.txt');
+var myReadSteam = fs.createReadStream(__dirname+'/readMe.txt','utf8');
+var myWriteStream = fs.createWriteStream(__dirname+'/writeMe.txt');
 
 //read file uing readFile method
-fs.readFile('readMe.txt','utf8',(err,data)=>{
-  console.log(data);
-});
+// fs.readFile('readMe.txt','utf8',(err,data)=>{
+//   console.log(data);
+// });
 
 //create a event for reading the data in Stream
 myReadSteam.on('data',(chunk)=>{
   console.log('chunk recieved:');
-  console.log(chunk);
+  myWriteStream.write(chunk);
 });
 //The main difference is in file read we can't use the data untill fully reciecved
 //but in Readstream the chunk data can be used while receiving other chunks
