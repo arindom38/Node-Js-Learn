@@ -1,0 +1,11 @@
+Express package:
+1. Easy and flexible routing system
+2. Integrates with many templating engines
+3. Contains a middle ware framework
+
+If the exporess package is already install and need in the app for depenedcy
+> npm install express-save
+
+If node mone is restricted for running change policy
+More details:
+https://dev.to/tradecoder/how-to-fix-error-nodemon-ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system-34fe
