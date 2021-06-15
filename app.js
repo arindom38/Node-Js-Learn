@@ -2,17 +2,22 @@
 var express = require('express');
 var app = express();
 
+//for rendering dynamic data into view need ejs template engine
+//view engine will automatically serach *.ejs file in view folder
+app.set('view engine', 'ejs');
+
 app.get('/',(req,res)=>{
-  res.send('This is my Website!!');
+  res.sendFile(__dirname+'/index.html');
 });
 
 app.get('/contact',(req,res)=>{
-  res.send('This is contact page');
+  res.sendFile(__dirname+'/contact.html');
 });
 
 //id is a varaible ,can be used for dynamic routing
 app.get('/profile/:id',(req,res)=>{
-  res.send('Your profile id: ' + req.params.id );
+  var data = {age: 28, job: 'Developer'};
+  res.render('profile',{id: req.params.id,data:data});
 });
 //server need to listen to a port
 app.listen(3000);
