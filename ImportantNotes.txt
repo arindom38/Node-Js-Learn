@@ -9,3 +9,7 @@ for initialization:
 
 install/uninstall any package:
 > npm install/uninstall <package_name>
+
+package need to install:
+1. express -> makes routing process very easy and many others
+2. nodemon -> monitoring package for development (like hotdeploy)
