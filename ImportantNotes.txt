@@ -1,0 +1,11 @@
+In Node js app can be easily handed using packaage.json file.
+1. project can be easily handover
+2. Dependency handling easy
+3. No need to install all project related dependencies manually
+
+command:
+for initialization:
+> npm init
+
+install/uninstall any package:
+> npm install/uninstall <package_name>
