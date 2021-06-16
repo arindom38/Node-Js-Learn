@@ -7,11 +7,11 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
-  res.sendFile(__dirname+'/index.html');
+  res.render('index');
 });
 
 app.get('/contact',(req,res)=>{
-  res.sendFile(__dirname+'/contact.html');
+  res.render('contact');
 });
 
 //id is a varaible ,can be used for dynamic routing
