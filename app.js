@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 //for rendering dynamic data into view need ejs template engine
-//view engine will automatically serach *.ejs file in view folder
+//view engine will automatically serach *.ejs file in views folder
 app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
