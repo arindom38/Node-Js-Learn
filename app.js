@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/contact',(req,res)=>{
-  res.render('contact');
+  res.render('contact',{qs: req.query}); //sending the query string like ..../contact?dept=IT&person=joye
 });
 
 //id is a varaible ,can be used for dynamic routing
