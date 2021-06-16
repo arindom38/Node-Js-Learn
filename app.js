@@ -16,7 +16,7 @@ app.get('/contact',(req,res)=>{
 
 //id is a varaible ,can be used for dynamic routing
 app.get('/profile/:id',(req,res)=>{
-  var data = {age: 28, job: 'Developer'};
+  var data = {age: 28, job: 'Developer',hobbies:['Travelling','Music','Drawing']};
   res.render('profile',{id: req.params.id,data:data});
 });
 //server need to listen to a port
