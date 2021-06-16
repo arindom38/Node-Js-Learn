@@ -5,6 +5,11 @@ var app = express();
 //for rendering dynamic data into view need ejs template engine
 //view engine will automatically serach *.ejs file in views folder
 app.set('view engine', 'ejs');
+//middle ware used for loading static files like css
+//the first paramter in use function indicating  the href link in ejs/html file .eg href="/resources/style.css"
+//2nd paramtet indicating the actual path of the css file
+// details : https://expressjs.com/en/guide/using-middleware.html#middleware.router
+app.use('/resources',express.static('assets'));
 
 app.get('/',(req,res)=>{
   res.render('index');
