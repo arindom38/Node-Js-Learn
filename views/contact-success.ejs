@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/resources/style.css" type="text/css">
+    <title>Index</title>
+  </head>
+  <body>
+    <div class="div0">
+      <%- include('partials/navbar'); %>
+      <h2>Welcome to Contact</h2>
+      <p>Thanks for contacting with us!</p>
+      <p>You have requested to contact with <strong><%= data.person %></strong> of <strong><%= data.dept %></strong> department </p>
+      <p>We will reply to at <strong><%= data.email %></strong></p>
+    </div>
+  </body>
+</html>
