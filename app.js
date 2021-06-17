@@ -8,7 +8,7 @@ var app = express();
 app.set('viw engine','ejs');
 
 //middle-ware for assets management
-app.use('/assets',express.static('./public'));
+app.use(express.static('./public'));
 
 //Handle controllers
 todoController(app);
