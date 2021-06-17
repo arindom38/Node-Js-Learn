@@ -5,7 +5,7 @@ var todoController = require('./controllers/todoController');
 var app = express();
 
 //set up template engine
-app.set('viw engine','ejs');
+app.set('view engine','ejs');
 
 //middle-ware for assets management
 app.use(express.static('./public'));
