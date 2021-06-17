@@ -13,7 +13,9 @@ app.set('view engine', 'ejs');
 app.use('/resources',express.static('assets'));
 
 //middle-ware for form submit post request ,request is pass through request body
-var urlencodedParser = bodyParser.urlencoded({extended:false});
+//var urlencodedParser = bodyParser.urlencoded({extended:false});
+//Since Express 4.16 you don't have to install body-parser. Just use middleware
+var urlencodedParser =  express.urlencoded({extended: true});
 
 //request handling
 app.get('/',(req,res)=>{
