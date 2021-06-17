@@ -11,7 +11,7 @@ $(document).ready(function(){
         data: todo,
         success: function(data){
           //do something with the data via front-end framework
-          location.reload();
+          location.reload(); //on success the page is realoaded and render
         }
       });
 
@@ -20,7 +20,7 @@ $(document).ready(function(){
   });
 
   $('li').on('click', function(){
-      var item = $(this).text().replace(/ /g, "-");
+      var item = $(this).text().replace(/ /g, "-"); // replacing all spaces in the item with -
       $.ajax({
         type: 'DELETE',
         url: '/todo/' + item,

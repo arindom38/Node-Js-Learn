@@ -9,6 +9,8 @@ app.set('view engine','ejs');
 
 //middle-ware for assets management
 app.use(express.static('./public'));
+//middle-ware for post method handling urlencodeparsser
+app.use(express.urlencoded({extended:true}));
 
 //Handle controllers
 todoController(app);
