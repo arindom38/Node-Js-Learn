@@ -1,23 +1,41 @@
 //dummy data
 var data = [{item: 'Take Meal'},{item: 'Kick some Coding'},{item: 'Take a nap'}];
+const Todo = require('../models/todo'); //.. require as it needs to get to the root directory one step
 module.exports = (app) => {
 
 app.get('/todo',(req,res)=>{
-  res.render('todo',{todos: data});
+  Todo.find()
+    .then((result)=>{
+      res.render('todo',{todos: result});
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
 });
 
 app.post('/todo',(req,res)=>{ //no need to urlencodeparsser the middleware is already using it
-  //adding the new item in the existing data
-  data.push(req.body);
-  res.json(data); //can also be send as res.json({todos: data})
+  const todos = new Todo({
+    item: req.body.item
+   });
+  todos.save()
+    .then((result)=>{
+      console.log('Post :'+result);
+      res.json(result);
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
 });
 
 app.delete('/todo/:item',(req,res)=>{
-  data = data.filter((todo)=>{
-    //filter function delete the data which will match the item in the data with the request item
-    return todo.item.replace(/ /g,'-') !== req.params.item;
-  });
-  res.json(data);
+  Todo.find({item: req.params.item.replace(/\-/g," ")}).remove()
+    .then((result)=>{
+      res.json(data);
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+
 });
 
 };
