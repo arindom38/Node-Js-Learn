@@ -4,7 +4,7 @@
   "description": "a little to-do app using ndoe js",
   "main": "app.js",
   "scripts": {
-    "start": "npm app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
