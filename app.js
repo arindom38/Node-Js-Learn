@@ -9,7 +9,7 @@ var app = express();
 const dbURI = 'mongodb+srv://ninjaAdmin:test1234@node-db.gwy3t.mongodb.net/nodedb?retryWrites=true&w=majority'
 //asynchronous method for db connection
 mongoose.connect(dbURI,{useNewUrlParser:true,useUnifiedTopology:true})
-  .then((result) => app.listen(3000)) // when db is connected only then server start
+  .then((result) => app.listen(process.env.PORT||3000)) // when db is connected only then server start
   .catch((err)=> console.log(err));
 //set up template engine
 app.set('view engine','ejs');

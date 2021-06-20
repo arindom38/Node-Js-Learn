@@ -3,6 +3,10 @@ var data = [{item: 'Take Meal'},{item: 'Kick some Coding'},{item: 'Take a nap'}]
 const Todo = require('../models/todo'); //.. require as it needs to get to the root directory one step
 module.exports = (app) => {
 
+app.get('/',(req,res)=>{
+  res.redirect('/todo');
+});
+
 app.get('/todo',(req,res)=>{
   Todo.find()
     .then((result)=>{
